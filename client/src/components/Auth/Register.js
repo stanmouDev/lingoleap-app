@@ -11,11 +11,16 @@ const Register = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setError(''); // Clear previous errors
         try {
             await axios.post('http://localhost:3001/api/auth/register', { username, password });
             navigate('/login');
         } catch (err) {
-            setError('Failed to register. Username might already be taken.');
+            if (err.response && err.response.data && err.response.data.message) {
+                setError(err.response.data.message);
+            } else {
+                setError('Failed to register. Please try again later.');
+            }
         }
     };
 

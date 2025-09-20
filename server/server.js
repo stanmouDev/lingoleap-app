@@ -32,7 +32,10 @@ app.post('/api/auth/register', async (req, res) => {
     const sql = 'INSERT INTO users (username, password) VALUES (?, ?)';
     db.run(sql, [username, hashedPassword], function(err) {
       if (err) {
-        return res.status(400).json({ message: 'Username already exists' });
+        if (err.code === 'SQLITE_CONSTRAINT') {
+          return res.status(409).json({ message: 'Username already exists' });
+        }
+        return res.status(500).json({ message: 'An error occurred while creating the user.' });
       }
       res.status(201).json({ id: this.lastID });
     });
