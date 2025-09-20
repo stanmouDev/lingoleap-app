@@ -53,3 +53,12 @@ To get a local copy up and running, follow these simple steps.
    cd ../server
    node server.js
    ```
+
+## How to Use LingoLeap
+
+1.  **Register & Login:** Start by creating a new account or logging in if you already have one.
+2.  **Create a Deck:** From the dashboard, create a new "deck." A deck is like a folder for a set of flashcards, e.g., "Spanish Food Vocabulary" or "Japanese Phrases."
+3.  **Add Cards:** Click on a deck to open it, and then add new cards. Each card has a "front" (for the word/phrase you're learning) and a "back" (for the definition or translation).
+4.  **Start a Quiz:** Once your deck has cards, you can start a quiz. LingoLeap will show you the front of a card and you'll have to recall the back.
+5.  **Review Your Answers:** After you reveal the answer, rate how well you knew it. This rating tells the spaced repetition system when to show you the card again. Cards you know well will appear less often, while cards you struggle with will appear more frequently.
+6.  **Track Your Progress:** Check the leaderboard to see how you rank against other learners based on the experience points you earn from studying
